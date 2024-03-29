@@ -17,15 +17,18 @@ public class ReadExample {
 		try (InputStream in = new FileInputStream(originalFileName);
 			OutputStream os = new FileOutputStream(targetFileName)){
 
-			byte[] arr = new byte[1024];
+//			byte[] arr = new byte[1024];
 			
-			while(true) {
-				int count = in.read(arr);
-				if(count == -1)
-					break;
-				// 버퍼에 대기중.
-				os.write(arr);
-			}
+//			while(true) {
+//				int count = in.read(arr);
+//				if(count == -1)
+//					break;
+//				// 버퍼에 대기중.
+//				os.write(arr);
+//			}
+			
+			// 위에 코드 한줄로 대체 가능 JAVA 9부터.
+			in.transferTo(os);
 			
 			// 잔류 데이터 출력해 버퍼를 비운다.
 			os.flush();
