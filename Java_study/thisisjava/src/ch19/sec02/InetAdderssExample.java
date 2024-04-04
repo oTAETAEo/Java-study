@@ -16,6 +16,7 @@ public class InetAdderssExample {
 			
 			for(InetAddress a : address2) {
 				System.out.println("www.naver.com의 ip 주소 : " + a.getHostAddress());
+				
 			}
 			
 		} catch (UnknownHostException e) {
